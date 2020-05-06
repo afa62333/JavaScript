@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        // cal1（）和apply（）
+        // -这两个方法都是函数对象的方法，需要通过函数对象来调用
+        // -当对函数调用ca11（）和apply（）都会调用函数执行
+        // 在调用ca11和apply（）可以将一个对象指定为第一个参数
+        // 此时这个对象将会成为函数执行时的this
+        function fun(){
+            //alert("我是fun函数");
+            alert(this.name);
+        }
+        // fun.call();
+        // fun.apply();
+        // fun();
+        var obj = {
+            name:"obj",
+            sayName:function(){
+                alert(this.name);
+            }
+        };
+        var obj2 = {
+            name:"obj2"
+        }
+        // fun.apply(obj);
+        obj.sayName();  //会是obj
+        obj.sayname.apply(obj2); //会是obj2  这个参数是谁  this就是谁
+
+
+
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
